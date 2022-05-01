@@ -30,7 +30,7 @@ No resources.
 | <a name="input_create_vpc"></a> [create\_vpc](#input\_create\_vpc) | Dterminates to create vpc resources or not | `bool` | `true` | no |
 | <a name="input_domain_ip_address"></a> [domain\_ip\_address](#input\_domain\_ip\_address) | The IP address of the domain. If specified, this IP is used to created an initial A record for the domain | `string` | `null` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Required if `create_domain` is set to `true`. The name of the domain | `string` | `null` | no |
-| <a name="input_domain_records"></a> [domain\_records](#input\_domain\_records) | Map of the DNS domain records | `map(any)` | `null` | no |
+| <a name="input_domain_records"></a> [domain\_records](#input\_domain\_records) | Map of the DNS domain records | `map(any)` | `{}` | no |
 | <a name="input_region"></a> [region](#input\_region) | The DigitalOcean region slug for the VPC's location | `string` | n/a | yes |
 | <a name="input_vpc_description"></a> [vpc\_description](#input\_vpc\_description) | A free-form text field up to a limit of 255 characters to describe the VPC | `string` | `null` | no |
 | <a name="input_vpc_ip_range"></a> [vpc\_ip\_range](#input\_vpc\_ip\_range) | The range of IP addresses for the VPC in CIDR notation. Network ranges cannot overlap with other networks in the same account and must be in range of private addresses as defined in RFC1918. It may not be larger than `/16` or smaller than `/24` | `string` | `null` | no |

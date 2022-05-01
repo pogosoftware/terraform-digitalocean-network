@@ -15,7 +15,7 @@ variable "domain_ip_address" {
 }
 
 variable "domain_records" {
-  default     = null
+  default     = {}
   description = "Map of the DNS domain records"
   type        = map(any)
 }

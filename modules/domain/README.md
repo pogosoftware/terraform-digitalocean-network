@@ -33,7 +33,7 @@ No modules.
 | <a name="input_create_domain"></a> [create\_domain](#input\_create\_domain) | Dterminates to create domain resources or not | `bool` | `true` | no |
 | <a name="input_domain_ip_address"></a> [domain\_ip\_address](#input\_domain\_ip\_address) | The IP address of the domain. If specified, this IP is used to created an initial A record for the domain | `string` | n/a | yes |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The name of the domain | `string` | n/a | yes |
-| <a name="input_domain_records"></a> [domain\_records](#input\_domain\_records) | Map of the DNS domain records | `map(any)` | `null` | no |
+| <a name="input_domain_records"></a> [domain\_records](#input\_domain\_records) | Map of the DNS domain records | `map(any)` | `{}` | no |
 
 ## Outputs
 
