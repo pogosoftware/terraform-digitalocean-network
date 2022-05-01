@@ -32,3 +32,30 @@ variable "vpc_ip_range" {
   description = "The range of IP addresses for the VPC in CIDR notation. Network ranges cannot overlap with other networks in the same account and must be in range of private addresses as defined in RFC1918. It may not be larger than `/16` or smaller than `/24`"
   type        = string
 }
+
+##########################################################################
+### DOMAIN
+##########################################################################
+variable "create_domain" {
+  default     = true
+  description = "Dterminates to create domain resources or not"
+  type        = bool
+}
+
+variable "domain_name" {
+  default     = null
+  description = "Required if `create_domain` is set to `true`. The name of the domain"
+  type        = string
+}
+
+variable "domain_ip_address" {
+  default     = null
+  description = "The IP address of the domain. If specified, this IP is used to created an initial A record for the domain"
+  type        = string
+}
+
+variable "domain_records" {
+  default     = null
+  description = "Map of the DNS domain records"
+  type        = map(any)
+}
