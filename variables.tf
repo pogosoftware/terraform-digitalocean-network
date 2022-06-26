@@ -1,18 +1,16 @@
 ##########################################################################
-### COMMON
-##########################################################################
-variable "region" {
-  description = "The DigitalOcean region slug for the VPC's location"
-  type        = string
-}
-
-##########################################################################
 ### VPC
 ##########################################################################
 variable "create_vpc" {
-  default     = true
+  default     = false
   description = "Dterminates to create vpc resources or not"
   type        = bool
+}
+
+variable "vpc_region" {
+  default     = null
+  description = "The DigitalOcean region slug for the VPC's location"
+  type        = string
 }
 
 variable "vpc_name" {
@@ -37,8 +35,8 @@ variable "vpc_ip_range" {
 ### DOMAIN
 ##########################################################################
 variable "create_domain" {
-  default     = true
-  description = "Dterminates to create domain resources or not"
+  default     = false
+  description = "Determinates to create domain resources or not"
   type        = bool
 }
 
@@ -55,7 +53,17 @@ variable "domain_ip_address" {
 }
 
 variable "domain_records" {
-  default     = {}
+  default     = []
   description = "Map of the DNS domain records"
-  type        = map(any)
+  type = list(object({
+    name     = string
+    type     = string
+    value    = string
+    port     = optional(number)
+    priority = optional(number)
+    weight   = optional(number)
+    ttl      = optional(number)
+    flags    = optional(number)
+    tag      = optional(string)
+  }))
 }
